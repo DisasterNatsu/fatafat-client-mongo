@@ -243,4 +243,4 @@ const Tips = async () => {
 
 export default Tips;
 
-export const revalidate = 600;
+export const revalidate = 10;

@@ -8,66 +8,127 @@ import {
 } from "@/components/ui/table";
 import { arr } from "@/constants/DummyArray";
 import { getDayOfWeek } from "../helpers/DaysOfTheWeek";
+import { MonthFormatter } from "../helpers/MonthFormatter";
 
 const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
+  // Function to group data by month
+  const groupDataByMonth = () => {
+    const groupedData: { [key: string]: LatestUpdateDataType[] } = {};
+
+    data.forEach((item) => {
+      const monthYear = item.date.split("-").slice(1, 3).join("-");
+      if (!groupedData[monthYear]) {
+        groupedData[monthYear] = [];
+      }
+      groupedData[monthYear].push(item);
+    });
+
+    return groupedData;
+  };
+
+  const groupedData = groupDataByMonth();
+
+  // Sort the months in descending order
+  const sortedMonths = Object.keys(groupedData).sort((a: string, b: string) => {
+    const [dayA, monthA, yearA] = a.split("-").map(Number);
+    const [dayB, monthB, yearB] = b.split("-").map(Number);
+
+    // Create Date objects
+    const dateA = new Date(yearA, monthA - 1, dayA);
+    const dateB = new Date(yearB, monthB - 1, dayB);
+
+    // Check if dates are valid
+    const isValidDateA = !isNaN(dateA.getTime());
+    const isValidDateB = !isNaN(dateB.getTime());
+
+    if (!isValidDateA && !isValidDateB) return 0; // Both dates are invalid, treat them as equal
+    if (!isValidDateA) return 1; // dateA is invalid, move it to the end
+    if (!isValidDateB) return -1; // dateB is invalid, move it to the beginning
+
+    // Compare valid dates
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <section>
       <div>
-        {/* table */}
-        <Table className="cursor-default border-b">
-          {/* Table Header */}
-          <TableHeader className="bg-accentColor">
-            <TableRow>
-              <TableHead className="border-r-2 text-black w-[200px] font-semibold md:font-bold text-[0.80rem] md:text-lg text-center h-8 dark:border-black px-0">
-                Date
-              </TableHead>
-              {arr.map((_, index: number) => (
-                <TableHead
-                  key={index}
-                  className={`text-black w-[200px] font-bold text-[0.80rem] md:text-lg text-center h-8 dark:border-black text-xs ${
-                    index !== arr.length - 1 && "border-r-2"
-                  } px-0 py-1 leading-4`}
-                >
-                  {index + 1}
-                </TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
-          {/* table body */}
+        {/* Iterate over each month */}
+        {sortedMonths.map((monthYear, index: number) => {
+          const fomattedMonth = MonthFormatter(monthYear.split("-")[0]);
 
-          {data &&
-            data.map((item: LatestUpdateDataType, index: number) => {
-              const day = getDayOfWeek(item.date);
-
-              return (
-                <TableBody key={index}>
+          return (
+            <div key={monthYear}>
+              <h3
+                className={`text-center bg-accentColor text-black text-2xl my-1 py-1 font-semibold ${
+                  index !== 0 && "mt-5"
+                }`}
+              >{`${fomattedMonth} ${monthYear.split("-")[1]}`}</h3>
+              {/* Table */}
+              <Table className="cursor-default border-b">
+                {/* Table Header */}
+                <TableHeader className="accent-colors">
                   <TableRow>
-                    <TableCell className="px-0 text-xs font-semibold text-center md:text-base md:font-bold bg-slate-300 dark:bg-slate-900 border-b">
-                      {day} <br className="sm:hidden" />{" "}
-                      {item.date.split("-").splice(0, 2).join("/")}
-                    </TableCell>
+                    <TableHead className="bg-accentColor text-black border-r w-[200px] font-semibold md:font-bold text-[0.80rem] md:text-lg text-center h-8 dark:border-black px-0">
+                      Date
+                    </TableHead>
                     {arr.map((_, index: number) => (
-                      <TableCell
-                        className="text-center border-x-2 p-0 py-1 font-bold border-b border-b-slate-300 dark:border-b-slate-500"
+                      <TableHead
                         key={index}
+                        className={`bg-accentColor text-black w-[200px] font-semibold text-[0.80rem] md:text-lg text-center h-8 dark:border-black text-xs ${
+                          index !== arr.length - 1 && "border-r-2"
+                        } px-0 py-1 leading-4`}
                       >
-                        {item.data[index]
-                          ? item.data[index].gameResultPatti
-                          : "--"}
-
-                        <br />
-
-                        {item.data[index] ? item.data[index].gameNumber : "--"}
-                      </TableCell>
+                        {index + 1}
+                      </TableHead>
                     ))}
                   </TableRow>
+                </TableHeader>
+                {/* Table body */}
+                <TableBody>
+                  {groupedData[monthYear].reverse().map(
+                    (item: LatestUpdateDataType, index: number) => {
+                      const day = getDayOfWeek(item.date);
+
+                      return (
+                        <TableRow key={index} className="border-b">
+                          <TableCell
+                            className="p-0 text-xs font-semibold text-center md:text-base md:font-bold bg-slate-300 dark:bg-slate-900 border-b"
+                            id={
+                              index === groupedData[monthYear].length - 11
+                                ? "last-ten-days"
+                                : ""
+                            }
+                          >
+                            {day} <br className="sm:hidden" />{" "}
+                            {item.date.split("-").splice(0, 2).join("/")}
+                          </TableCell>
+                          {arr.map((_, index: number) => (
+                            <TableCell
+                              className="text-center dark:border-black border-x-2 p-0 py-1 font-bold"
+                              key={index}
+                            >
+                              {item.data[index]
+                                ? item.data[index].gameResultPatti
+                                : "--"}
+                              <br />
+                              {item.data[index]
+                                ? item.data[index].gameNumber
+                                : "--"}
+                            </TableCell>
+                          ))}
+                        </TableRow>
+                      );
+                    }
+                  )}
                 </TableBody>
-              );
-            })}
-        </Table>
+              </Table>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 };
 
 export default PreviousTable;
+
