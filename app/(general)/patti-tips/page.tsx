@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getTips = async ({ date }: { date: string }) => {
-  const res = await Axios.get(`/get/tips/${date}`);
+  const res = await Axios.get(`/get/patti-tips/${date}`);
 
   const tipsData = await res.data;
 
@@ -19,7 +19,7 @@ const getTips = async ({ date }: { date: string }) => {
   return { tips: null };
 };
 
-const Tips = async () => {
+const PattiTips = async () => {
   const { formattedDate } = DateFormatter({
     current: true,
   });
@@ -31,38 +31,39 @@ const Tips = async () => {
   return (
     <>
       <title>
-        {`Kolkata FF Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
+        {`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
       </title>
-      <link rel="canonical" href="https://kolkataff.space/tips" />
+      <link rel="canonical" href="https://kolkataff.space/patti-tips" />
       <meta
         name="title"
-        content={`Kolkata FF Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
+        content={`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
       />
       <meta
         name="description"
-        content="Kolkata FF Result Kolkata FATAFAT Result Today Live All 8 Baji Live Super Fast With Tips"
+        content="Kolkata FF Result Kolkata FATAFAT Result Today Live All 8 Baji Live Super Fast With Tips, Patti Tips"
       />
       <meta
         property="og:title"
-        content={`Kolkata FF Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
+        content={`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
       />
-      <meta property="og:url" content="https://kolkataff.space/tips" />
+      <meta property="og:url" content="https://kolkataff.space/patti-tips" />
       <meta property="og:type" content="website" />
       <meta
         property="og:description"
-        content="Kolkata FF Result Kolkata FATAFAT Result Today Live All 8 Baji Live Super Fast With Tips"
+        content="Kolkata FF Result Kolkata FATAFAT Result Today Live All 8 Baji Live Super Fast With Tips, Patti Tips"
       />
 
       {/* Intro Section */}
 
       <div className="flex md:items-start justify-center items-center mt-4 flex-col space-y-3">
         <h1 className="font-bold text-2xl border-b dark:border-white pb-1 border-black">
-          Kolkata FF Tips
+          Kolkata FF Patti Tips
         </h1>
 
         <p className="text-lg text-center md:text-start">
-          Here we are providing daily <strong>Kolkata FF Fatafat tips</strong>{" "}
-          today lucky numbers and Baji updates.
+          Here we are providing daily{" "}
+          <strong>Kolkata FF Fatafat patti tips</strong> today lucky numbers and
+          Baji updates.
         </p>
 
         <p className="text-lg text-center md:text-start">
@@ -75,19 +76,21 @@ const Tips = async () => {
         </p>
       </div>
 
+      {/* Link to Smart Mumbai Matka Tips */}
+
       <div className="flex items-center justify-center my-2">
         <a
-          href="https://smartmumbaimatka.in/tips"
-          className="flex items-center mt-5 justify-center gap-2 border-2 border-accentColor py-2 rounded-md  md:hidden w-full mx-auto font-semibold animate-bounce"
+          href="https://smartmumbaimatka.in/patti-tips"
+          className="flex items-center px-2 py-2 justify-center border-accentColor border-2 rounded-md animate-bounce"
         >
           <Image
             src={"/smartmumbailogo.png"}
-            alt="Smart Matka Logo"
-            height={40}
+            alt="Smart Mumbai Matka Logo"
             width={40}
-            className="w-auto h-auto"
-          />{" "}
-          Smart Mumbai Matka
+            height={40}
+            loading="lazy"
+          />
+          <span>Smart Matka Patti Tips</span>
         </a>
       </div>
 
@@ -145,6 +148,20 @@ const Tips = async () => {
           </Table>
         </div>
       </section>
+
+      <a
+        href="https://smartmumbaimatka.in/"
+        className="flex items-center mt-5 justify-center gap-2 border-2 border-accentColor py-2 rounded-md  md:hidden w-full mx-auto font-semibold animate-bounce"
+      >
+        <Image
+          src={"/smartmumbailogo.png"}
+          alt="Smart Matka Logo"
+          height={40}
+          width={40}
+          className="w-auto h-auto"
+        />{" "}
+        Smart Mumbai Matka
+      </a>
 
       <section className="w-full h-full flex items-center justify-center my-5">
         <Link
@@ -243,6 +260,6 @@ const Tips = async () => {
   );
 };
 
-export default Tips;
+export default PattiTips;
 
 export const revalidate = 10;

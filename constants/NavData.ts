@@ -1,16 +1,20 @@
 import {
   ArrowLeftSquare,
   BarChart3,
-  BookA,
   Clover,
   IndianRupee,
-  Lock,
+  BadgeIndianRupee,
 } from "lucide-react";
 
 export const NavLinks: NavDataType[] = [
   {
     heading: "Tips",
     link: "/tips",
+    icon: BadgeIndianRupee,
+  },
+  {
+    heading: "Patti Tips",
+    link: "/patti-tips",
     icon: IndianRupee,
   },
   {
@@ -27,15 +31,5 @@ export const NavLinks: NavDataType[] = [
     heading: "Patti Chart",
     link: "/patti-chart",
     icon: BarChart3,
-  },
-  {
-    heading: "About Us",
-    link: "/about",
-    icon: BookA,
-  },
-  {
-    heading: "Privacy",
-    link: "/privacy",
-    icon: Lock,
   },
 ];

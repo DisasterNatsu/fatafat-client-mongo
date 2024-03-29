@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <meta
         name="robots"
         content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:standard"

@@ -8,14 +8,14 @@ const Footer = () => {
         {/* left */}
         <div className="flex flex-col items-center sm:items-start space-y-4">
           <h1 className="text-xl font-semibold">Important Links</h1>
-          <Link href={"#"} className="hover:text-accentColor">
-            Previous Links
+          <Link href={"/privacy"} className="hover:text-accentColor">
+            Privacy
           </Link>
-          <Link href={"#"} className="hover:text-accentColor">
+          <Link href={"/about"} className="hover:text-accentColor">
+            About Us
+          </Link>
+          <Link href={"/tips"} className="hover:text-accentColor">
             Tips
-          </Link>
-          <Link href={"#"} className="hover:text-accentColor">
-            Suggestions
           </Link>
           <Link href={"#"} className="hover:text-accentColor">
             Profit Calculator

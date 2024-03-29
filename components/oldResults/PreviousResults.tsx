@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   TableBody,
@@ -9,6 +11,8 @@ import {
 import { arr } from "@/constants/DummyArray";
 import { getDayOfWeek } from "../helpers/DaysOfTheWeek";
 import { MonthFormatter } from "../helpers/MonthFormatter";
+import { useState } from "react";
+import { Button } from "../ui/button";
 
 const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
   // Function to group data by month
@@ -56,6 +60,40 @@ const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
         {sortedMonths.map((monthYear, index: number) => {
           const fomattedMonth = MonthFormatter(monthYear.split("-")[0]);
 
+          const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
+
+          // Function to handle number selection
+          const handleNumberSelect = (number: number) => {
+            if (selectedNumbers.includes(number)) {
+              setSelectedNumbers(selectedNumbers.filter((n) => n !== number));
+            } else {
+              setSelectedNumbers([...selectedNumbers, number]);
+            }
+          };
+
+          // Function to determine the highlight color for a selected number
+          const getHighlightColor = (number: number) => {
+            const index = selectedNumbers.indexOf(number);
+            const colors = [
+              "hover:bg-yellow-400 bg-yellow-400 text-black hover:text-black",
+              "hover:bg-blue-400 bg-blue-400 text-black hover:text-black",
+              "hover:bg-green-400 bg-green-400 text-black hover:text-black",
+              "hover:bg-pink-400 bg-pink-400 text-black hover:text-black",
+              "hover:bg-purple-400 bg-purple-400 text-black hover:text-black",
+              "hover:bg-orange-400 bg-orange-400 text-black hover:text-black",
+              "hover:bg-cyan-400 bg-cyan-400 text-black hover:text-black",
+              "hover:bg-indigo-400 bg-indigo-400 text-black hover:text-black",
+              "hover:bg-red-400 bg-red-400 text-black hover:text-black",
+              "hover:bg-teal-400 bg-teal-400 text-black hover:text-black",
+            ];
+            return index !== -1 ? colors[index % colors.length] : "";
+          };
+
+          // Function to determine if a cell should be highlighted
+          const shouldHighlightCell = (cellNumber: number) => {
+            return selectedNumbers.includes(cellNumber);
+          };
+
           return (
             <div key={monthYear}>
               <h3
@@ -85,8 +123,9 @@ const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
                 </TableHeader>
                 {/* Table body */}
                 <TableBody>
-                  {groupedData[monthYear].reverse().map(
-                    (item: LatestUpdateDataType, index: number) => {
+                  {groupedData[monthYear]
+                    .reverse()
+                    .map((item: LatestUpdateDataType, index: number) => {
                       const day = getDayOfWeek(item.date);
 
                       return (
@@ -104,7 +143,13 @@ const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
                           </TableCell>
                           {arr.map((_, index: number) => (
                             <TableCell
-                              className="text-center dark:border-black border-x-2 p-0 py-1 font-bold"
+                              className={`text-center dark:border-black border-x-2 p-0 py-1 font-bold ${
+                                item.data[index] &&
+                                shouldHighlightCell(
+                                  item.data[index].gameNumber
+                                ) &&
+                                getHighlightColor(item.data[index].gameNumber)
+                              }`}
                               key={index}
                             >
                               {item.data[index]
@@ -118,10 +163,29 @@ const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
                           ))}
                         </TableRow>
                       );
-                    }
-                  )}
+                    })}
                 </TableBody>
               </Table>
+              <div>
+                <h3 className="text-center mt-2 font-semibold py-2">
+                  বক্স ঘরে ক্লিক করে বিগত দিনের রিপিট ঘর দেখুন।
+                </h3>
+
+                <ul className="flex mt-2 items-center justify-center space-x-2">
+                  {[...Array(10)].map((_, index: number) => (
+                    <Button
+                      variant={"outline"}
+                      onClick={() => handleNumberSelect(index)}
+                      className={`px-2 md:px-3 text-base font-semibold border-stone-700 dark:border-slate-400 ${
+                        shouldHighlightCell(index) && getHighlightColor(index)
+                      }`}
+                      key={index + 1}
+                    >
+                      {index}
+                    </Button>
+                  ))}
+                </ul>
+              </div>
             </div>
           );
         })}
@@ -131,4 +195,3 @@ const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
 };
 
 export default PreviousTable;
-
