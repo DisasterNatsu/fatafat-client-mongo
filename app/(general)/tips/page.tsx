@@ -146,13 +146,33 @@ const Tips = async () => {
         </div>
       </section>
 
-      <section className="w-full h-full flex items-center justify-center my-5">
-        <Link
-          href={"/lucky-number"}
-          className="py-5 bg-accentColor w-full text-center rounded-md text-black text-lg md:text-2xl lg:text-3xl font-semibold hover:scale-105 duration-500"
-        >
-          Click to Check your luck today, Kolkata Fatafat Lucky Number{" "}
-        </Link>
+      <section className="mb-4">
+        <div className="flex flex-col sm:hidden justify-center items-center space-y-3 mt-4">
+          <Link
+            href="/"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            Kolkata FF Result
+          </Link>
+          <Link
+            href="/patti-tips"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            Patti Tips
+          </Link>
+          <Link
+            href="/lucky-number"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            Kolkata FF Lucky Number
+          </Link>
+          <Link
+            href="/prev-res"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            All Results 2024
+          </Link>
+        </div>
       </section>
 
       <section className="my-5 px-5">

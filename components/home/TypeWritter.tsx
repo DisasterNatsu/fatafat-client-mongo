@@ -7,15 +7,19 @@ import SocialButton from "../shared/SocialButton";
 
 const TypeWriter = () => {
   return (
-    <div className="grid md:grid-cols-2 w-full px-0 my-5">
+    <div className="grid md:grid-cols-2 w-full px-0 mt-1">
       {/* Left */}
       <div className="flex flex-col gap-5 justify-center p-5">
         <h4 className="lg:text-5xl md:text-4xl text-2xl text-center md:text-left">
-          Get all fatafat <br />
           <span className="font-semibold">
             <Typewriter
               options={{
-                strings: ["Updates", "Predictions", "Expert Suggestions"],
+                strings: [
+                  "Kolkata FF Tips",
+                  "Kolkata FF Patti Tips",
+                  "Join Whatsapp",
+                  "Use Magic Tool",
+                ],
                 autoStart: true,
                 loop: true,
               }}

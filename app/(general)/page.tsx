@@ -11,6 +11,7 @@ import Image from "next/image";
 import TimeTable from "@/components/home/TimeTable";
 import FAQ from "@/components/home/FAQ";
 import InformationTable from "@/components/home/InformationTable";
+import { FaTelegramPlane } from "react-icons/fa";
 
 const getLatestData = async ({ date }: { date: string }) => {
   const latest = await Axios.get(`/get/latest/${date}`);
@@ -82,23 +83,13 @@ const Home = async () => {
           <TypeWriter />
         </section>
 
-        <section>
-          <h2 className="border-b-2 dark:border-white border-black mb-4 text-center py-1 text-xl md:text-2xl font-bold">
-            Result of Last Two Days
-          </h2>
+        <section className="-mt-2">
           <LastTwoDaysTable data={lastTwoDays} />
         </section>
 
         {/* Links visible in mobile */}
 
         <section className="mb-4">
-          <h2 className="text-center font-bold my-3 text-2xl">
-            Kolkata FF Result Today
-          </h2>
-          <p className="text-center text-sm">
-            On this website, you will get <strong>Super Fast</strong> Kolkata FF
-            Result Live Online. We also provide
-          </p>
           <div className="flex flex-col sm:hidden justify-center items-center space-y-3 mt-4">
             <Link
               href={"#last-ten-days"}
@@ -129,10 +120,16 @@ const Home = async () => {
             </Link>
 
             <Link
-              href="/tips"
+              href="/patti-tips"
               className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
             >
               Patti Tips
+            </Link>
+            <Link
+              href="https://t.me/kolkataFFspace"
+              className="flex items-center justify-center gap-1 text-xl font-semibold bg-cyan-600 w-full py-1 rounded-md"
+            >
+              <FaTelegramPlane /> Telegram
             </Link>
 
             {/* Mumbai Satta Matka */}
@@ -158,6 +155,13 @@ const Home = async () => {
               </Link>
             </p>
           </div>
+          <h2 className="text-center font-bold my-3 text-2xl">
+            Kolkata FF Result Today
+          </h2>
+          <p className="text-center text-sm">
+            On this website, you will get <strong>Super Fast</strong> Kolkata FF
+            Result Live Online. We also provide
+          </p>
         </section>
 
         {/* last ten days result */}
@@ -203,6 +207,6 @@ const Home = async () => {
   );
 };
 
-export const revalidate = 10;
+export const revalidate = 1;
 
 export default Home;

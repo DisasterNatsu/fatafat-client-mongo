@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { arr } from "@/constants/DummyArray";
+import { FcGoogle } from "react-icons/fc";
 
 interface DataProp {
   message: string;
@@ -89,8 +90,9 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
           </TableRow>
         </TableBody>
       </Table>
-      <h3 className="text-center bg-accentColor text-black font-semibold py-1 my-1">
-        সবার আগে রেজাল্ট ও ফ্রি টিপস্ দেখতে পাবেন এই ওয়েব সাইটে।
+      <h3 className="text-center bg-accentColor text-black font-semibold py-1 my-1 flex items-center justify-center flex-col">
+        সবার আগে রেজাল্ট ও ফ্রি টিপস্ দেখতে পাবেন এই ওয়েব সাইটে। Google Kolkata
+        FF Space
       </h3>
       <div className="flex justify-center items-center gap-3 mt-3">
         <Button

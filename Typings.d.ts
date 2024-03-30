@@ -65,3 +65,15 @@ interface dataArray {
   gameNumber: number;
   _id: string;
 }
+
+interface RepeatPattiTypeSub {
+  index: number;
+  patti: string;
+  _id: string;
+}
+
+interface RepeatPattiType {
+  _id: string;
+  repeatPatti: RepeatPattiTypeSub[];
+  __v: number;
+}

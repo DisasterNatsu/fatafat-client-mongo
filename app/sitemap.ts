@@ -9,16 +9,22 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 1,
     },
     {
-      url: "https://kolkataff.space/prev-res",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
       url: "https://kolkataff.space/tips",
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1,
+    },
+    {
+      url: "https://kolkataff.space/patti-tips",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 1,
+    },
+    {
+      url: "https://kolkataff.space/prev-res",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
     },
     {
       url: "https://kolkataff.space/lucky-number",

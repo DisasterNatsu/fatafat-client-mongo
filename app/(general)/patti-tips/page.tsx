@@ -1,5 +1,6 @@
 import { DateFormatter } from "@/components/helpers/DateFormatter";
 import { DateFormatterQuery } from "@/components/helpers/DateQueryFormatter";
+import RepeatPatti from "@/components/patti-tips/RepeatPatti";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { arr } from "@/constants/DummyArray";
 import { Axios } from "@/utils/AxiosConfig";
@@ -19,6 +20,18 @@ const getTips = async ({ date }: { date: string }) => {
   return { tips: null };
 };
 
+const getRepeatTips = async () => {
+  const res = await Axios.get("/get/repeat-patti");
+
+  const repeatPatti = await res.data;
+
+  if (repeatPatti) {
+    return { repeatPatti };
+  }
+
+  return { repeatPatti: null };
+};
+
 const PattiTips = async () => {
   const { formattedDate } = DateFormatter({
     current: true,
@@ -27,6 +40,8 @@ const PattiTips = async () => {
   const queryDate = DateFormatterQuery();
 
   const { tips } = await getTips({ date: queryDate });
+
+  const { repeatPatti } = await getRepeatTips();
 
   return (
     <>
@@ -94,12 +109,16 @@ const PattiTips = async () => {
         </a>
       </div>
 
+      {/* Repeat Patti */}
+
+      <RepeatPatti data={repeatPatti} />
+
       {/* Table Heading */}
 
       <section>
-        <h1 className="mt-5 text-center text-2xl font-bold bg-accentColor text-black">
+        <h2 className="mt-5 text-center text-2xl font-bold bg-accentColor text-black">
           Tips for [{formattedDate}]
-        </h1>
+        </h2>
         <div>
           <Table className="cursor-default border-b dark:border-white">
             <TableBody>
@@ -163,13 +182,33 @@ const PattiTips = async () => {
         Smart Mumbai Matka
       </a>
 
-      <section className="w-full h-full flex items-center justify-center my-5">
-        <Link
-          href={"/lucky-number"}
-          className="py-5 bg-accentColor w-full text-center rounded-md text-black text-lg md:text-2xl lg:text-3xl font-semibold hover:scale-105 duration-500"
-        >
-          Click to Check your luck today, Kolkata Fatafat Lucky Number{" "}
-        </Link>
+      <section className="mb-4">
+        <div className="flex flex-col sm:hidden justify-center items-center space-y-3 mt-4">
+          <Link
+            href="/"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            Kolkata FF Result
+          </Link>
+          <Link
+            href="/tips"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            Tips
+          </Link>
+          <Link
+            href="/lucky-number"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            Kolkata FF Lucky Number
+          </Link>
+          <Link
+            href="/prev-res"
+            className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
+          >
+            All Results 2024
+          </Link>
+        </div>
       </section>
 
       <section className="my-5 px-5">

@@ -145,4 +145,3 @@ const LastTenDaysTable = ({ data }: { data: LatestUpdateDataType[] }) => {
 };
 
 export default LastTenDaysTable;
-

@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -11,10 +12,12 @@ import {
 import { arr } from "@/constants/DummyArray";
 import { getDayOfWeek } from "../helpers/DaysOfTheWeek";
 import { MonthFormatter } from "../helpers/MonthFormatter";
-import { useState } from "react";
 import { Button } from "../ui/button";
 
 const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
+  // Declare state for selected numbers
+  const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
+
   // Function to group data by month
   const groupDataByMonth = () => {
     const groupedData: { [key: string]: LatestUpdateDataType[] } = {};
@@ -59,8 +62,6 @@ const PreviousTable = ({ data }: { data: LatestUpdateDataType[] }) => {
         {/* Iterate over each month */}
         {sortedMonths.map((monthYear, index: number) => {
           const fomattedMonth = MonthFormatter(monthYear.split("-")[0]);
-
-          const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
 
           // Function to handle number selection
           const handleNumberSelect = (number: number) => {
