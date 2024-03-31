@@ -58,7 +58,7 @@ const Header = () => {
   }, [path]);
 
   return (
-    <header className="mb-4">
+    <header className="mb-2">
       <nav className="w-full md:h-full items-center flex h-20 justify-between p-4">
         {/* Left */}
         <div className="flex items-center lg:space-x-0 gap-3">
