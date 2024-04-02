@@ -12,6 +12,7 @@ import TimeTable from "@/components/home/TimeTable";
 import FAQ from "@/components/home/FAQ";
 import InformationTable from "@/components/home/InformationTable";
 import { FaTelegramPlane } from "react-icons/fa";
+import ResponsiveAd from "@/Adsense/ResponsiveAd";
 
 const getLatestData = async ({ date }: { date: string }) => {
   const latest = await Axios.get(`/get/latest/${date}`);
@@ -85,6 +86,10 @@ const Home = async () => {
 
         <section className="-mt-2">
           <LastTwoDaysTable data={lastTwoDays} />
+        </section>
+
+        <section className="my-2">
+          <ResponsiveAd />
         </section>
 
         {/* Links visible in mobile */}
@@ -171,6 +176,10 @@ const Home = async () => {
             Result of Last Ten Days
           </h2>
           <LastTenDaysTable data={lastfiftyDays} />
+        </section>
+
+        <section className="my-2">
+          <ResponsiveAd />
         </section>
 
         {/* Time Table */}

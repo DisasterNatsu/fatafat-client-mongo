@@ -1,3 +1,4 @@
+import ResponsiveAd from "@/Adsense/ResponsiveAd";
 import { DateFormatter } from "@/components/helpers/DateFormatter";
 import { DateFormatterQuery } from "@/components/helpers/DateQueryFormatter";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
@@ -90,6 +91,10 @@ const Tips = async () => {
           Smart Mumbai Matka
         </a>
       </div>
+
+      <section className="my-2">
+        <ResponsiveAd />
+      </section>
 
       {/* Table Heading */}
 

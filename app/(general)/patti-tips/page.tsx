@@ -1,3 +1,4 @@
+import ResponsiveAd from "@/Adsense/ResponsiveAd";
 import { DateFormatter } from "@/components/helpers/DateFormatter";
 import { DateFormatterQuery } from "@/components/helpers/DateQueryFormatter";
 import RepeatPatti from "@/components/patti-tips/RepeatPatti";
@@ -168,19 +169,25 @@ const PattiTips = async () => {
         </div>
       </section>
 
-      <a
-        href="https://smartmumbaimatka.in/"
-        className="flex items-center mt-5 justify-center gap-2 border-2 border-accentColor py-2 rounded-md  md:hidden w-full mx-auto font-semibold animate-bounce"
-      >
-        <Image
-          src={"/smartmumbailogo.png"}
-          alt="Smart Matka Logo"
-          height={40}
-          width={40}
-          className="w-auto h-auto"
-        />{" "}
-        Smart Mumbai Matka
-      </a>
+      <div className="flex items-center justify-center my-2">
+        <a
+          href="https://smartmumbaimatka.in/tips"
+          className="flex items-center mt-5 justify-center gap-2 border-2 border-accentColor py-2 rounded-md  md:hidden w-full mx-auto font-semibold animate-bounce"
+        >
+          <Image
+            src={"/smartmumbailogo.png"}
+            alt="Smart Matka Logo"
+            height={40}
+            width={40}
+            className="w-auto h-auto"
+          />{" "}
+          Smart Mumbai Matka
+        </a>
+      </div>
+
+      <section className="my-2">
+        <ResponsiveAd />
+      </section>
 
       <section className="mb-4">
         <div className="flex flex-col sm:hidden justify-center items-center space-y-3 mt-4">

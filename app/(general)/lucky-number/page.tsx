@@ -1,3 +1,4 @@
+import ResponsiveAd from "@/Adsense/ResponsiveAd";
 import PattiTips from "@/components/luckyNumber/PattiTips";
 import Roulette from "@/components/luckyNumber/Roulette";
 import SocialButton from "@/components/shared/SocialButton";
@@ -55,6 +56,10 @@ const LuckyNumber = () => {
           </div>
         </section>
 
+        <section className="my-2">
+          <ResponsiveAd />
+        </section>
+
         <PattiTips />
 
         <section className="my-5 flex flex-col items-center justify-center">
@@ -81,8 +86,6 @@ const LuckyNumber = () => {
           </ul>
         </section>
 
-        <SocialButton />
-
         <section className="mt-5 w-full flex flex-col space-y-5 items-center justify-center">
           <Link
             href={"/"}
@@ -95,6 +98,12 @@ const LuckyNumber = () => {
             className="bg-accentColor w-full text-center rounded-md py-3 text-black font-bold hover:scale-105 duration-500 md:text-3xl text-xl"
           >
             Tips
+          </Link>
+          <Link
+            href={"/patti-tips"}
+            className="bg-accentColor w-full text-center rounded-md py-3 text-black font-bold hover:scale-105 duration-500 md:text-3xl text-xl"
+          >
+            Patti Tips
           </Link>
         </section>
       </div>
