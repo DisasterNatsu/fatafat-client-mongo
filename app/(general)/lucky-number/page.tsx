@@ -8,23 +8,23 @@ import React from "react";
 const LuckyNumber = () => {
   return (
     <>
-      <title>Kolkata FF 💚 Lucky Number | Luckly Patti</title>
+      <title>Kolkata FF 💛 Lucky Number | Luckly Patti</title>
       <meta
         name="title"
-        content="Kolkata FF Today Lucky Number | Lucky Patti [2024] 💚"
+        content="Kolkata FF Today Lucky Number | Lucky Patti [2024] 💛"
       />
       <meta
         name="description"
-        content="Kolkata FF Lucky Patti 2021 💚 Kolkata FATAFAT Satta Lucky Patti, Lucky Number, Joy Guru Today Free Tips"
+        content="Kolkata FF Lucky Patti 2021 💛 Kolkata FATAFAT Satta Lucky Patti, Lucky Number, Joy Guru Today Free Tips"
       />
-      <link rel="canonical" href="https://kolkataff.space/lucky-number" />
+      <link rel="canonical" href="https://kolkataff.vip/lucky-number" />
       <meta
         property="og:title"
-        content="Kolkata FF Today Lucky Number | Lucky Patti [2024] 💚"
+        content="Kolkata FF Today Lucky Number | Lucky Patti [2024] 💛"
       />
       <meta
         property="og:description"
-        content="Kolkata FF Lucky Patti 2021 💚 Kolkata FATAFAT Satta Lucky Patti, Lucky Number, Joy Guru Today Free Tips"
+        content="Kolkata FF Lucky Patti 2021 💛 Kolkata FATAFAT Satta Lucky Patti, Lucky Number, Joy Guru Today Free Tips"
       />
       <div className="w-full h-full">
         <section className="flex w-full md:flex-row flex-col items-center md:items-start gap-5">
@@ -77,7 +77,7 @@ const LuckyNumber = () => {
             </li>
             <li>
               Just remember Kolkata ff city you can find our website link
-              quickly by searching on Google kolkataff space
+              quickly by searching on Google kolkataff Vip
             </li>
             <li>
               Bookmark this website for quick updates. Kolkata ff tips dekho aur

@@ -78,7 +78,7 @@ const Tips = async () => {
 
       <div className="flex items-center justify-center my-2">
         <a
-          href="https://smartmumbaimatka.in/tips"
+          href="https://smartmumbaimatka.in"
           className="flex items-center mt-5 justify-center gap-2 border-2 border-accentColor py-2 rounded-md  md:hidden w-full mx-auto font-semibold animate-bounce"
         >
           <Image
@@ -121,7 +121,20 @@ const Tips = async () => {
                           Baji Tips
                         </TableCell>
                         <TableCell className="text-center font-medium w-[50%] text-lg">
-                          {tips[index] ? tips[index].tip : "--"}
+                          {tips[index] ? (
+                            index !== tips.length - 1 || index === 7 ? (
+                              tips[index].tip
+                            ) : (
+                              <Link
+                                href={"/#home-tips"}
+                                className="hover:text-accentColor animate-pulse px-2 py-2 dark:bg-slate-700 bg-slate-500 text-white rounded-md"
+                              >
+                                Tips
+                              </Link>
+                            )
+                          ) : (
+                            "--"
+                          )}
                         </TableCell>
                       </TableRow>
                     );

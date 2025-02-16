@@ -1,4 +1,3 @@
-import React from "react";
 import { Axios } from "@/utils/AxiosConfig";
 import { DateFormatter } from "@/components/helpers/DateFormatter";
 import { DateFormatterQuery } from "@/components/helpers/DateQueryFormatter";
@@ -12,18 +11,24 @@ import TimeTable from "@/components/home/TimeTable";
 import FAQ from "@/components/home/FAQ";
 import InformationTable from "@/components/home/InformationTable";
 import { FaTelegramPlane } from "react-icons/fa";
-import ResponsiveAd from "@/Adsense/ResponsiveAd";
+
 
 const getLatestData = async ({ date }: { date: string }) => {
   const latest = await Axios.get(`/get/latest/${date}`);
   const lastTen = await Axios.get(`/get/last-ten/${date}`);
   const lastTwo = await Axios.get(`/get/last-two/${date}`);
+  const tips = await Axios.get(`/get/tips/${date}`);
+  const Message = await Axios.get("/get/message");
 
   const latestData = await latest.data;
   const lastfiftyDays = await lastTen.data;
   const lastTwoDays = await lastTwo.data;
+  const tipsData = await tips.data;
+  let messageData = await Message.data;
 
-  return { latestData, lastfiftyDays, lastTwoDays };
+  if (messageData.length === 0) messageData = null;
+
+  return { latestData, lastfiftyDays, lastTwoDays, tipsData };
 };
 
 const Home = async () => {
@@ -36,16 +41,17 @@ const Home = async () => {
     current: true,
   });
 
-  const { latestData, lastfiftyDays, lastTwoDays } = await getLatestData({
-    date: queryDate,
-  });
+  const { latestData, lastfiftyDays, lastTwoDays, tipsData } =
+    await getLatestData({
+      date: queryDate,
+    });
 
   return (
     <>
-      <title>Kolkata FF 💚 FATAFAT Result Today LIVE Tips, Patti Chart</title>
+      <title>Kolkata FF 💛 FATAFAT Result Today LIVE Tips, Patti Chart</title>
       <meta
         name="title"
-        content="Kolkata FF 💚 FATAFAT Result Today LIVE Tips, Patti Chart"
+        content="Kolkata FF 💛 FATAFAT Result Today LIVE Tips, Patti Chart"
       />
       <meta
         name="description"
@@ -53,15 +59,15 @@ const Home = async () => {
       />
       <meta
         property="og:title"
-        content="Kolkata FF 💚 FATAFAT Result Today LIVE Tips, Patti Chart"
+        content="Kolkata FF 💛 FATAFAT Result Today LIVE Tips, Patti Chart"
       />
-      <meta property="og:url" content="https://kolkataff.space" />
+      <meta property="og:url" content="https://kolkataff.vip" />
       <meta property="og:type" content="website" />
       <meta
         property="og:description"
         content="Kolkata FF Result Kolkata FATAFAT Result Today Live All 8 Baji Live Super Fast With Tips & Trick Old Results, 220 Patti Chart, Lucky Number - কলকাতা ff"
       />
-      <link rel="canonical" href="https://kolkataff.space" />
+      <link rel="canonical" href="https://kolkataff.vip" />
 
       {/* body */}
 
@@ -88,10 +94,6 @@ const Home = async () => {
           <LastTwoDaysTable data={lastTwoDays} />
         </section>
 
-        <section className="my-2">
-          <ResponsiveAd />
-        </section>
-
         {/* Links visible in mobile */}
 
         <section className="mb-4">
@@ -104,7 +106,7 @@ const Home = async () => {
             </Link>
 
             <Link
-              href="/tips"
+              href="https://kolkataff.mini.site/"
               className="font-semibold bg-accentColor w-full text-center text-black py-1 rounded-md text-xl"
             >
               Kolkata FF Tips
@@ -178,10 +180,6 @@ const Home = async () => {
           <LastTenDaysTable data={lastfiftyDays} />
         </section>
 
-        <section className="my-2">
-          <ResponsiveAd />
-        </section>
-
         {/* Time Table */}
 
         <hr className="my-5 pb-2 dark:border-white border-black" />
@@ -211,6 +209,75 @@ const Home = async () => {
             </div>
           </div>
         </section>
+
+        <section className="space-y-5">
+          <h2 className="text-3xl font-semibold md:text-left text-center">
+            How Was Kolkata FF Started?
+          </h2>
+
+          <p className="md:text-xl md:text-left text-center text-base">
+            Let&apos;s go back to 2018 when a person named Krishna Das in
+            Kolkata had an idea. He was talking with his friends about helping
+            poor families. They decided to start a local lottery in their area.
+            People from the neighbourhood could play and win prizes. This game
+            was called Kolkata FF Fatafat. It was a way for people to have fun
+            and also help others. The game started small but grew popular over
+            time. It began in the 1970s as “Mini,” just a simple game for people
+            to enjoy. Now, Kolkata FF is a big part of the city&apos;s culture.
+            It gives everyone a chance to win something exciting by trying their
+            luck.
+          </p>
+
+          <h2 className="text-3xl font-semibold md:text-left text-center">
+            How to Check Kolkata FF Result Today
+          </h2>
+          <p className="md:text-xl md:text-left text-center text-base">
+            To check the result for Kolkata FF on 17th April 2024, follow the
+            steps given below:
+          </p>
+          <ul className="pl-5 list-disc space-y-3">
+            <li className="md:text-xl text-left text-base">
+              Go to the Kolkata FF official website. You can find it by
+              searching for <Link href={"/"}>Kolkata FF website</Link> online.
+            </li>
+            <li className="md:text-xl text-left text-base">
+              Once you&apos;re on the website, look for a section labelled{" "}
+              <strong>Results</strong> or <strong>Today&apos;s Results</strong>.
+            </li>
+          </ul>
+
+          <h2 className="text-3xl font-semibold md:text-left text-center">
+            Kolkata Fatafat (FF) Ghosh Babu Tips
+          </h2>
+          <ul className="pl-5 list-disc space-y-3">
+            <li className="md:text-xl text-left text-base">
+              <strong>Engage in Online Forums:</strong> Join{" "}
+              <strong>Ghosh Babu&apos;s online forums</strong> for predictions,
+              tips, and insights.
+            </li>
+            <li className="md:text-xl text-left text-base">
+              <strong>Learn from Past Experiences:</strong> Benefit from
+              players&apos; previous number selections to enhance your future
+              choices.
+            </li>
+            <li className="md:text-xl text-left text-base">
+              <strong>Play for Enjoyment, not Profit:</strong> Understand that
+              Kolkata FF is based on luck, not guaranteed earnings.
+            </li>
+          </ul>
+
+          <h2 className="text-3xl font-semibold md:text-left text-center">
+            Kolkata Fatafat Goswami Tips
+          </h2>
+          <p className="md:text-xl md:text-left text-center text-base">
+            Who or What is <strong>Kolkata Fatafat Goswami?</strong> Goswami is
+            a person in kolkata sapce known for Kolkata Fatafat Goswami tips. He
+            accurately analyzes the old results and prediction the live and
+            upcoming kolkata fatafat results.
+          </p>
+        </section>
+
+        
       </div>
     </>
   );

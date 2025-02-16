@@ -15,24 +15,24 @@ const PattiChart = () => {
       <title>Kolkata ff patti list chart complete full</title>
       <meta
         name="title"
-        content="Kolkata FF Patti List 220 Panna FATAFAT Patti Chart 💚"
+        content="Kolkata FF Patti List 220 Panna FATAFAT Patti Chart 💛"
       />
       <meta
         name="description"
-        content="Kolkata FF Patti List 💚 All 220 FATAFAT Patti Chart and 10 Single Ghar Ke Sath Hai  (कोलकाता एफएफ पट्टी चार्ट)&nbsp;  (কলকাতা এফএফ পট্টি চার্ট)💚"
+        content="Kolkata FF Patti List 💛 All 220 FATAFAT Patti Chart and 10 Single Ghar Ke Sath Hai  (कोलकाता एफएफ पट्टी चार्ट)&nbsp;  (কলকাতা এফএফ পট্টি চার্ট)💛"
       />
       <meta
         property="og:title"
-        content="Kolkata FF Patti List 220 Panna FATAFAT Patti Chart 💚"
+        content="Kolkata FF Patti List 220 Panna FATAFAT Patti Chart 💛"
       />
       <meta
         property="og:description"
-        content="Kolkata FF Patti List 💚 All 220 FATAFAT Patti Chart and 10 Single Ghar Ke Sath Hai  (कोलकाता एफएफ पट्टी चार्ट)&nbsp;  (কলকাতা এফএফ পট্টি চার্ট)💚"
+        content="Kolkata FF Patti List 💛 All 220 FATAFAT Patti Chart and 10 Single Ghar Ke Sath Hai  (कोलकाता एफएफ पट्टी चार्ट)&nbsp;  (কলকাতা এফএফ পট্টি চার্ট)💛"
       />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="article" />
-      <meta prefix="og:url" content="https://kolkataff.space/patti-chart" />
-      <link rel="canonical" href="https://kolkataff.space/patti-chart" />
+      <meta prefix="og:url" content="https://kolkataff.vip/patti-chart" />
+      <link rel="canonical" href="https://kolkataff.vip/patti-chart" />
 
       <div>
         <section className="flex flex-col items-center justify-center gap-8 my-5">

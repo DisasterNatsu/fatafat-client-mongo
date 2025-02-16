@@ -4,60 +4,65 @@ import React from "react";
 const Privacy = () => {
   return (
     <div>
-      <title>Kolkata FF | Privacy</title>
+      <title>Fataluck | Privacy</title>
       <meta property="og:url" content="https://kolkataff.vip/privacy" />
+
+      <p className="text-sm text-center sm:text-left">
+        IT Haven values your privacy. This Privacy Policy explains how we
+        collect, use, disclose, and safeguard your information when you use our
+        mobile applications available on the Google Play Store (FATALUCK).
+        Please read this Privacy Policy carefully. If you do not agree with the
+        terms of this Privacy Policy, please do not use the Apps.
+      </p>
+
       <h1 className="text-3xl font-semibold my-3 text-center sm:text-left">
         Privacy
       </h1>
       <p className="text-sm text-center sm:text-left">
-        Our website address is:{" "}
-        <Link href={"/"} className="text-accentColor">
-          kolkataff.space
+        Our website app is:{" "}
+        <Link href={"#"} className="text-accentColor">
+          Fataluck
         </Link>
       </p>
       <div className="flex flex-col space-y-4 my-3">
         <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
-          Comments
+          Information We Collect
+        </h2>
+        <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
+          We may collect personal data that you voluntarily provide to us when
+          you:
         </h2>
         <p className="text-center sm:text-left">
-          When visitors leave comments on the site we collect the data shown in
-          the comments form, and also the visitor&apos;s IP address and browser
-          user agent string to help spam detection.
+          Create an account within the Apps. Make in-app purchases. Contact us
+          for customer support. Participate in surveys or feedback requests.
+          Personal data may include, but is not limited to:
         </p>
         <p className="text-center sm:text-left">
-          We use discuss comment and you should also check their privacy policy
-          at{" "}
-          <Link
-            href={
-              "https://help.disqus.com/en/articles/1717103-disqus-privacy-policy"
-            }
-            className="text-accentColor"
-          >
-            Here
-          </Link>
-          .
+          Name Email address Phone number Payment information Any other
+          information you provide to us
         </p>
       </div>
       <div className="flex flex-col space-y-4 my-3">
         <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
-          Media
+          Usage Data
         </h2>
         <p className="text-center sm:text-left">
-          If you upload images to the website, you should avoid uploading images
-          with embedded location data (EXIF GPS) included. Visitors to the
-          website can download and extract any location data from images on the
-          website.
+          We may collect non-personal information about your interaction with
+          the Apps. This may include:
+        </p>
+        <p className="text-center sm:text-left">
+          Device information (e.g., type, operating system) Log information
+          (e.g., IP address, access times, pages viewed) Usage details (e.g.,
+          features used, duration of use)
         </p>
       </div>
       <div className="flex flex-col space-y-4 my-3">
         <h1 className="text-3xl font-semibold my-3 text-center sm:text-left">
-          Cookies
+          Cookies and Tracking Technologies
         </h1>
         <p className="text-center sm:text-left">
-          If you leave a comment on our site you may opt in to saving your name,
-          email address and website in cookies. These are for your convenience
-          so that you do not have to fill in your details again when you leave
-          another comment. These cookies will last for one year.
+          We may use cookies, web beacons, and similar tracking technologies to
+          collect and store information about your usage of the Apps.
         </p>
         <p className="text-center sm:text-left">
           If you visit our login page, we will set a temporary cookie to
@@ -80,22 +85,20 @@ const Privacy = () => {
       </div>
       <div className="flex flex-col space-y-4 my-3">
         <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
-          Embedded content from other websites
+          How We Use Your Information
         </h2>
         <p className="text-center sm:text-left">
-          Articles on this site may include embedded content (e.g. videos,
-          images, articles, etc.). Embedded content from other websites behaves
-          in the exact same way as if the visitor has visited the other website.
+          We use the information we collect for various purposes, including to:
         </p>
         <p className="text-center sm:text-left">
-          These websites may collect data about you, use cookies, embed
-          additional third-party tracking, and monitor your interaction with
-          that embedded content, including tracking your inte
+          Provide, operate, and maintain our Apps. Improve, personalize, and
+          expand our Apps. Understand and analyze how you use our Apps. Develop
+          new products, services, features,
         </p>
       </div>
       <div className="flex flex-col space-y-4 my-3">
         <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
-          Whe we share your data with
+          How we share your data with
         </h2>
         <p className="text-center sm:text-left">
           If you request a password reset, your IP address will be included in
@@ -106,13 +109,9 @@ const Privacy = () => {
         <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
           How long we retain your data
         </h2>
+
         <p className="text-center sm:text-left">
-          If you leave a comment, the comment and its metadata are retained
-          indefinitely. This is so we can recognise and approve any follow-up
-          comments automatically instead of holding them in a moderation queue.
-        </p>
-        <p className="text-center sm:text-left">
-          For users that register on our website (if any), we also store the
+          For users that register on our App (if any), we also store the
           personal information they provide in their user profile. All users can
           see, edit, or delete their personal information at any time (except
           they cannot change their username). Website administrators can also
@@ -124,7 +123,7 @@ const Privacy = () => {
           Media
         </h2>
         <p className="text-center sm:text-left">
-          If you upload images to the website, you should avoid uploading images
+          If you upload images to the App, you should avoid uploading images
           with embedded location data (EXIF GPS) included. Visitors to the
           website can download and extract any location data from images on the
           website.
@@ -135,7 +134,7 @@ const Privacy = () => {
           What restrictions do you have on your data
         </h2>
         <p className="text-center sm:text-left">
-          If you have an account on this site, or have left comments, you can
+          If you have an account on this App, or have left comments, you can
           request to receive an exported file of the personal data we hold about
           you, including any data you have provided to us. You can also request
           that we erase any personal data we hold about you. This does not
@@ -143,15 +142,7 @@ const Privacy = () => {
           security purposes.
         </p>
       </div>
-      <div className="flex flex-col space-y-4 my-3">
-        <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
-          Where we send your data
-        </h2>
-        <p className="text-center sm:text-left">
-          Visitor comments may be checked through an automated spam detection
-          service.
-        </p>
-      </div>
+
       <div className="flex flex-col space-y-4 my-3">
         <h2 className="text-3xl font-semibold my-3 text-center sm:text-left">
           CCPA Privacy Rights (Do Not Sell My Personal Information)

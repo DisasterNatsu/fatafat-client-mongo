@@ -52,7 +52,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        accentColor: "#22c55e",
+        accentColor: "#dfaf67",
       },
       borderRadius: {
         lg: "var(--radius)",

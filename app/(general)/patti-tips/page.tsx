@@ -47,12 +47,12 @@ const PattiTips = async () => {
   return (
     <>
       <title>
-        {`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
+        {`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💛 [${formattedDate}]`}
       </title>
-      <link rel="canonical" href="https://kolkataff.space/patti-tips" />
+      <link rel="canonical" href="https://kolkataff.vip/patti-tips" />
       <meta
         name="title"
-        content={`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
+        content={`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💛 [${formattedDate}]`}
       />
       <meta
         name="description"
@@ -60,9 +60,9 @@ const PattiTips = async () => {
       />
       <meta
         property="og:title"
-        content={`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💚 [${formattedDate}]`}
+        content={`Kolkata FF Patti Tips » Kolkata FATAFAT Tips Today 💛 [${formattedDate}]`}
       />
-      <meta property="og:url" content="https://kolkataff.space/patti-tips" />
+      <meta property="og:url" content="https://kolkataff.vip/patti-tips" />
       <meta property="og:type" content="website" />
       <meta
         property="og:description"

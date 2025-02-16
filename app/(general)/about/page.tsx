@@ -4,7 +4,7 @@ const About = () => {
   return (
     <>
       <title>Kolkata FF | About</title>
-      <meta property="og:url" content="https://kolkataff.space/about" />
+      <meta property="og:url" content="https://kolkataff.vip/about" />
 
       <div>
         <h1 className="text-3xl my-3 sm:text-left text-center">About Us</h1>
@@ -12,8 +12,8 @@ const About = () => {
         <section className="space-y-5">
           <p className="sm:text-left text-center">
             Welcome to{" "}
-            <Link href={"/"} target="_blank" className="text-green-400">
-              Kolkataff.space
+            <Link href={"/"} target="_blank" className="text-yellow-400">
+              Kolkataff.vip
             </Link>
             , your one-stop destination for all the latest results and updates
             of the Kolkata FF game in India. Our platform is dedicated to
@@ -45,8 +45,8 @@ const About = () => {
           </p>
           <p className="sm:text-left text-center">
             Thank you for choosing{" "}
-            <Link href={"/"} target="_blank" className="text-green-400">
-              kolkataff.space
+            <Link href={"/"} target="_blank" className="text-yellow-400">
+              kolkataff.vip
             </Link>{" "}
             as your go-to source for Kolkata FF results and information.
           </p>

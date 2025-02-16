@@ -77,3 +77,23 @@ interface RepeatPattiType {
   repeatPatti: RepeatPattiTypeSub[];
   __v: number;
 }
+
+interface tip {
+  index: number;
+  tip: string;
+  _id: string;
+}
+
+interface TipData {
+  _id: string;
+  date: string;
+  tips: tip[];
+  __v: 28;
+}
+
+interface MessageDataType {
+  _id: string;
+  heading: string;
+  __v: number;
+  message?: string;
+}

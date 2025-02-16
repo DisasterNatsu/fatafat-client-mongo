@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { arr } from "@/constants/DummyArray";
-import { FcGoogle } from "react-icons/fc";
 
 interface DataProp {
   message: string;
@@ -47,24 +46,20 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
               ? arr.map((_, index) => {
                   return (
                     <TableCell
-                      className="text-center font-bold text-black dark:text-white dark:border-black border-x-2 p-0 py-1"
+                      className="text-center text-[1.05rem] px-0 font-bold text-black dark:text-white dark:border-black border-x-2 p-0 py-1"
                       key={index}
                     >
                       {data.data[index] ? (
                         <>
-                          <p className="text-[1.05rem] py-2 px-0">
-                            {data.data[index].gameResultPatti}
-                          </p>
-                          <hr />
-                          <p className="text-[1.05rem] py-2 px-0">
-                            {data.data[index].gameNumber}
-                          </p>
+                          {data.data[index].gameResultPatti}
+                          <hr className="my-1" />
+                          {data.data[index].gameNumber}
                         </>
                       ) : (
                         <>
                           {data.data.length === index && index !== 8 ? (
                             <Link
-                              href={"/tips"}
+                              href={"https://kolkataff.mini.site/"}
                               className="hover:text-accentColor"
                             >
                               Tips
@@ -83,8 +78,6 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
                     key={index}
                   >
                     {"--"}
-                    <hr />
-                    {"--"}
                   </TableCell>
                 ))}
           </TableRow>
@@ -98,7 +91,7 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
         <Button
           variant={"secondary"}
           className="text-lg lg:hidden"
-          onClick={() => Router.push("/tips")}
+          onClick={() => Router.push("https://kolkataff.mini.site/")}
         >
           Tips
         </Button>
@@ -111,9 +104,9 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
         <Button
           variant={"secondary"}
           className="text-lg lg:hidden"
-          onClick={() => Router.push("/patti-tips")}
+          onClick={() => Router.push("https://kolkataff.mini.site/")}
         >
-          Patti Tips
+          Patti
         </Button>
       </div>
     </div>

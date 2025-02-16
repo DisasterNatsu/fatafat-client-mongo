@@ -1,5 +1,5 @@
 import { IoLogoWhatsapp } from "react-icons/io";
-import { FaWandMagicSparkles } from "react-icons/fa6";
+import { PiCurrencyInrBold } from "react-icons/pi";
 
 const SocialButton = ({ home }: { home?: boolean }) => {
   return (
@@ -18,11 +18,11 @@ const SocialButton = ({ home }: { home?: boolean }) => {
       </a>
 
       <a
-        href="#last-ten-days"
-        className="flex items-center gap-2 bg-red-600 py-2 px-3 rounded-md text-white font-semibold hover:scale-105 duration-500"
+        href="https://kolkataff.mini.site/"
+        className="flex items-center gap-2 bg-yellow-400 py-2 px-3 rounded-md text-black font-semibold hover:scale-105 duration-700 animate-pulse"
       >
-        <FaWandMagicSparkles className="text-white w-5 h-5" />
-        Magic Tools
+        <PiCurrencyInrBold className="text-black w-6 h-6 -mr-1" />
+        VIP Tips
       </a>
     </section>
   );

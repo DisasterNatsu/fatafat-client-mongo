@@ -71,7 +71,7 @@ const Header = () => {
           <div className="flex space-x-2 items-center">
             <Link href={"/"}>
               <Image
-                src="/logo.png"
+                src="/lgo.png"
                 alt="logo"
                 width={40}
                 height={40}

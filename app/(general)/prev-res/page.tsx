@@ -20,19 +20,19 @@ const PreviousResults = async () => {
   return (
     <>
       <title>Kolkata FF | Old Results</title>
-      <meta property="og:url" content="https://kolkataff.space/prev-res" />
-      <meta name="title" content="Kolkata FF 💚 FATAFAT Old Results" />
+      <meta property="og:url" content="https://kolkataff.vip/prev-res" />
+      <meta name="title" content="Kolkata FF 💛 FATAFAT Old Results" />
       <meta
         name="description"
         content="Kolkata FF Old Result Kolkata FATAFAT Old Results"
       />
-      <meta property="og:title" content="Kolkata FF 💚 FATAFAT Old Results" />
+      <meta property="og:title" content="Kolkata FF 💛 FATAFAT Old Results" />
       <meta property="og:type" content="website" />
       <meta
         property="og:description"
         content="Kolkata FF Old Result Kolkata FATAFAT Old Results"
       />
-      <link rel="canonical" href="https://kolkataff.space/prev-res" />
+      <link rel="canonical" href="https://kolkataff.vip/prev-res" />
 
       <div className="w-full flex justify-center my-5 flex-col">
         <section>

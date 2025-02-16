@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
       </div>
       <h1 className="text-center h-10 mt-3">
-        © 2023-2024 kolkataff.space | Made with ❤️ by{" "}
+        © 2024-2025 kolkataff.vip | Made with ❤️ by{" "}
         <Link
           href={"mailto:shilajitdutta44@gmail.com"}
           className="hover:text-accentColor"
