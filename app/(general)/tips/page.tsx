@@ -1,11 +1,11 @@
-import ResponsiveAd from "@/Adsense/ResponsiveAd";
+import Image from "next/image";
+import Link from "next/link";
 import { DateFormatter } from "@/components/helpers/DateFormatter";
 import { DateFormatterQuery } from "@/components/helpers/DateQueryFormatter";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { arr } from "@/constants/DummyArray";
+import { arr, vipTips } from "@/constants/DummyArray";
 import { Axios } from "@/utils/AxiosConfig";
-import Image from "next/image";
-import Link from "next/link";
+import { FaRupeeSign } from "react-icons/fa";
 
 const getTips = async ({ date }: { date: string }) => {
   const res = await Axios.get(`/get/tips/${date}`);
@@ -92,10 +92,6 @@ const Tips = async () => {
         </a>
       </div>
 
-      <section className="my-2">
-        <ResponsiveAd />
-      </section>
-
       {/* Table Heading */}
 
       <section>
@@ -161,6 +157,27 @@ const Tips = async () => {
                   })}
             </TableBody>
           </Table>
+        </div>
+      </section>
+
+      {/* Vip Tips Section */}
+
+      <section className="my-6">
+        <h2 className="mb-5 font-semibold lg:text-2xl text-lg underline">
+          VIP Tips:
+        </h2>
+        <div className="flex justify-around items-center">
+          {vipTips.map((item: number, index: number) => (
+            <Link
+              key={index}
+              className="flex items-center justify-center bg-accentColor px-3 py-2 dark:text-black text-white font-semibold rounded-sm hover:scale-110 duration-300"
+              href={"https://kolkataff.mini.site/"}
+              target="_blank"
+            >
+              <FaRupeeSign />
+              <p>{item}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

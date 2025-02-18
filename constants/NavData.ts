@@ -9,7 +9,7 @@ import {
 export const NavLinks: NavDataType[] = [
   {
     heading: "Tips",
-    link: "https://kolkataff.mini.site/",
+    link: "/tips",
     icon: BadgeIndianRupee,
   },
   {

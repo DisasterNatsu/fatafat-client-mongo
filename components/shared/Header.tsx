@@ -80,7 +80,7 @@ const Header = () => {
             </Link>
             <Link href={"/"} className="xl:block lg:hidden block">
               <p className="md:text-xl font-semibold">
-                Kolkata<span className="text-accentColor">FF</span>.space
+                Kolkata<span className="text-accentColor">FF</span>.vip
               </p>
               <p className="text-xs -mt-1 flex">🚀 Sabse pahele result 🚀</p>
             </Link>

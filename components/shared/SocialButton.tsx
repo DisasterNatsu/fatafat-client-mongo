@@ -1,5 +1,6 @@
 import { IoLogoWhatsapp } from "react-icons/io";
 import { PiCurrencyInrBold } from "react-icons/pi";
+import { FaWandMagicSparkles } from "react-icons/fa6";
 
 const SocialButton = ({ home }: { home?: boolean }) => {
   return (
@@ -9,7 +10,7 @@ const SocialButton = ({ home }: { home?: boolean }) => {
       }`}
     >
       <a
-        href="https://chat.whatsapp.com/FxBXh6Hk15c06QtH8o8lI6"
+        href="https://chat.whatsapp.com/DpHMhgEsHZ5KHxWzcgs0D0"
         target="_blank"
         className="flex items-center gap-2 bg-green-700 py-2 px-3 rounded-md text-white font-semibold hover:scale-105 duration-500"
       >
@@ -18,11 +19,11 @@ const SocialButton = ({ home }: { home?: boolean }) => {
       </a>
 
       <a
-        href="https://kolkataff.mini.site/"
-        className="flex items-center gap-2 bg-yellow-400 py-2 px-3 rounded-md text-black font-semibold hover:scale-105 duration-700 animate-pulse"
+        href="#last-ten-days"
+        className="flex items-center gap-2 bg-red-500 py-2 px-3 rounded-md text-black font-semibold hover:scale-105 duration-700 animate-pulse"
       >
-        <PiCurrencyInrBold className="text-black w-6 h-6 -mr-1" />
-        VIP Tips
+        <FaWandMagicSparkles className="text-black w-6 h-6 -mr-1" />
+        Magic Tool
       </a>
     </section>
   );

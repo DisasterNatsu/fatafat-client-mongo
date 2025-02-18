@@ -36,7 +36,7 @@ const MobileHeader = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Link href={"/"}>
-              <Image src="/logo.png" alt="logo" width={40} height={40} />{" "}
+              <Image src="/lgo.png" alt="logo" width={40} height={40} />{" "}
             </Link>
             <Link href={"/"}>
               <p className="md:text-2xl font-semibold">

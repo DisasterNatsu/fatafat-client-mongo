@@ -22,7 +22,7 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
   const Router = useRouter();
 
   const handleRefresh = () => {
-    return Router.refresh();
+    return window.location.reload();
   };
 
   return (
@@ -59,7 +59,7 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
                         <>
                           {data.data.length === index && index !== 8 ? (
                             <Link
-                              href={"https://kolkataff.mini.site/"}
+                              href={"/tips"}
                               className="hover:text-accentColor"
                             >
                               Tips
@@ -91,7 +91,7 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
         <Button
           variant={"secondary"}
           className="text-lg lg:hidden"
-          onClick={() => Router.push("https://kolkataff.mini.site/")}
+          onClick={() => Router.push("/tips")}
         >
           Tips
         </Button>
