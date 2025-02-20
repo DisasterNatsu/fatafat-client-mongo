@@ -106,7 +106,7 @@ const CurrentDayTable = ({ data }: { data?: LatestUpdateDataType }) => {
           className="text-lg lg:hidden"
           onClick={() => Router.push("https://kolkataff.mini.site/")}
         >
-          Patti
+          Play Online
         </Button>
       </div>
     </div>

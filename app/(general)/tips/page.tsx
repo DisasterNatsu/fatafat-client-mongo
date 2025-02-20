@@ -167,15 +167,15 @@ const Tips = async () => {
           VIP Tips:
         </h2>
         <div className="flex justify-around items-center">
-          {vipTips.map((item: number, index: number) => (
+          {vipTips.map((item: VipTipsData, index: number) => (
             <Link
               key={index}
               className="flex items-center justify-center bg-accentColor px-3 py-2 dark:text-black text-white font-semibold rounded-sm hover:scale-110 duration-300"
-              href={"https://kolkataff.mini.site/"}
+              href={item.link}
               target="_blank"
             >
               <FaRupeeSign />
-              <p>{item}</p>
+              <p>{item.amount}</p>
             </Link>
           ))}
         </div>

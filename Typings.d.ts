@@ -97,3 +97,8 @@ interface MessageDataType {
   __v: number;
   message?: string;
 }
+
+interface VipTipsData {
+  amount: number;
+  link: string;
+}
